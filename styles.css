@@ -1,0 +1,1004 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define Montserrat class */
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Body styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #1db954;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #121212;
+    font-family: 'Montserrat', sans-serif; /* Example of using Montserrat directly */
+}
+
+/* Updated logo animation */
+.logo {
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #121212;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f0f0f0;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    height: 60vh; /* Adjust height as needed */
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center align text inside hero */
+    color: #f0f0f0; /* Text color */
+}
+
+.hero-text {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f0f0f0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background-color: #1db954;
+    color: #121212;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 200%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.btn:hover::before {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Additional styling */
+.btn:hover {
+    background-color: #17a84b; /* Darker color on hover */
+    color: #f0f0f0; /* Lighter text color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-text {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh;
+    }
+
+    .hero-text {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+}
+
+/* About Section */
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.feature {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Footer */
+footer {
+    background-color: #1db954;
+    padding: 1rem;
+    text-align: center;
+    color: #121212;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+    color: #121212;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+
+
+/* Existing styles for other pages */
+
+
+
+
+/* Styles specific to connect.html */
+
+/* Existing styles for other pages */
+
+/* New styles for connect.html */
+#connect h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1db954; /* Green color to match the theme */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow for emphasis */
+}
+
+#connect-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(to right, #1e1e1e, #121212); /* Gradient background */
+    border-radius: 10px; /* Rounded corners for the content area */
+}
+
+.senior {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.senior:hover {
+    transform: translateY(-10px) scale(1.05); /* Scale up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.senior img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.senior:hover img {
+    transform: scale(1.1); /* Scale up image slightly more on hover */
+}
+
+.senior-info {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 0 0 8px 8px;
+}
+
+.senior h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1db954; /* Green color to match the theme */
+    transition: transform 0.3s ease; /* Apply same transition for text */
+}
+
+.senior p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+}
+
+.senior a {
+    color: #1db954; /* Green color for text */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for color change */
+    overflow: hidden;
+}
+
+.senior a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* White background color */
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.senior a:hover::before {
+    transform: scaleX(1);
+}
+
+.senior a:hover {
+    color: #fff; /* Change text color to white on hover */
+}
+
+/* Animation for Mentor Mesh logo */
+.header-logo {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1db954;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-logo::before {
+    content: "Mentor Mesh";
+    position: absolute;
+    left: 100%; /* Start off-screen */
+    white-space: nowrap; /* Prevent line break */
+    transition: left 0.3s ease; /* Slide animation */
+}
+
+.header-logo:hover::before {
+    left: 0; /* Slide in from the right on hover */
+}
+/* Existing styles for other pages */
+
+
+
+
+/* Styles specific to roadmap.html */
+/* Styles specific to roadmap.html */
+#roadmap h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1db954; /* Green color to match the theme */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow for emphasis */
+}
+
+#roadmap-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem; /* Increase gap for more space between sections */
+    padding: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.semester {
+    background-color: #1e1e1e;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 3rem; /* Increase bottom margin for more space */
+}
+
+.semester.left {
+    animation-delay: 0.2s;
+}
+
+.semester.right {
+    animation-delay: 0.4s;
+}
+
+.semester:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.semester img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.semester-info {
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif; /* Change font family */
+    line-height: 1.6; /* Improve text readability */
+}
+
+.semester h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1db954; /* Green color to match the theme */
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.semester p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Existing styles for other pages */
+
+
+
+
+/* Styles specific to login and signup.html */
+/* Existing styles for other pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #121212;
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1db954;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #121212;
+    font-family: 'Pacifico', cursive; /* Apply new font to Mentor Mesh logo */
+    animation: slideIn 1s ease-out; /* Apply animation */
+}
+
+/* Slide in animation for the logo */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #121212;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f0f0f0;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.hero-text {
+    position: relative;
+    text-align: center;
+    color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background-color: #1db954;
+    color: #121212;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #17a84b;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.feature {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+footer {
+    background-color: #1db954;
+    padding: 1rem;
+    text-align: center;
+    color: #121212;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+    color: #121212;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Existing styles for other pages */
+
+
+
+
+/* Styles specific to profile.html */
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #1db954; /* Green header */
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #121212;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #121212;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f0f0f0;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+}
+
+#profile {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #1e1e1e; /* Dark background for profile section */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#profile h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1db954; /* Green heading */
+}
+
+/* Profile section styles */
+.profile-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    width: 300px; /* Make boxes square */
+    height: 300px; /* Make boxes square */
+    animation: fadeInUp 1s ease-out; /* Animation */
+    display: inline-block; /* Align sections next to each other */
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1db954; /* Green subheading */
+}
+
+.profile-section p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #1db954; /* Green footer */
+    padding: 1rem;
+    text-align: center;
+    color: #121212;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+    color: #121212;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+/* Existing styles for other pages */
+
+
+
+
+/* Styles specific to chat.html */
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #1db954; /* Green header */
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #121212;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #121212;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f0f0f0;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+}
+
+#chat {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #1e1e1e; /* Dark background for chat section */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#chat h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1db954; /* Green heading */
+}
+
+#chat-content {
+    margin-bottom: 2rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.chat-post {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.chat-message {
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.chat-message p {
+    margin: 0.5rem 0;
+    text-align: left; /* Left-aligning the text */
+}
+
+.chat-message strong {
+    color: #1db954; /* Green text for names */
+}
+
+.timestamp {
+    font-size: 0.875rem;
+    color: #a0a0a0;
+}
+
+#chat-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#chat-input textarea {
+    flex-grow: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    resize: none;
+    height: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.send-button {
+    background-color: #1db954;
+    color: #121212;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #17a84b;
+}
+
+/* Footer styles */
+footer {
+    background-color: #1db954; /* Green footer */
+    padding: 1rem;
+    text-align: center;
+    color: #121212;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+    color: #121212;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
